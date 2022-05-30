@@ -1,18 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlignmentBehaviour : MonoBehaviour
+[CreateAssetMenu(menuName = "Flock/Behaviour/Alignment")]
+public class AlignmentBehaviour : FlockBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        
-    }
+        // No neighbours => maintain current alignment
+        if (context.Count == 0)
+        {
+            return agent.transform.up;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Vector2 alignmentMove = Vector2.zero;
+        foreach (var item in context)
+        {
+            alignmentMove += (Vector2) item.transform.up;
+        }
+
+        alignmentMove /= context.Count;
+
+        return alignmentMove;
     }
 }

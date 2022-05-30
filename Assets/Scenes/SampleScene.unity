@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 8550660502038174618, guid: cfea1b2b77f8840478fe3e43bbdc30bf, type: 3}
-  behaviour: {fileID: 11400000, guid: 7d2b420bad922c44c88046ae3f6ec0cb, type: 2}
+  behaviour: {fileID: 11400000, guid: 1adf2a06054a8de43a6fb89601b8a048, type: 2}
   agentCount: 250
   driveFactor: 1
   maxSpeed: 5

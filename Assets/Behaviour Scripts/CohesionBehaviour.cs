@@ -13,7 +13,7 @@ public class CohesionBehaviour : FlockBehaviour
         }
 
         Vector2 cohesionMove = Vector2.zero;
-        foreach (Transform item in context)
+        foreach (var item in context)
         {
                 // Global position
                 cohesionMove += (Vector2) item.position;
