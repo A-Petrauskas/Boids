@@ -57,6 +57,41 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (var agent in agents)
+        {
+            List<Transform> context = GetNearbyObjects(agent);
+
+            // Interpolates between white and red in relation to the number of neighbours
+            // agent.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
+
+            Vector2 move = behaviour.CalculateMove(agent, context, this);
+
+            move *= driveFactor;
+            if (move.sqrMagnitude > squareMaxSpeed)
+            {
+                // Multiply 1 (normalized) by the max speed
+                move = move.normalized * maxSpeed;
+            }
+
+            agent.Move(move);
+        }
+    }
+
+
+    List<Transform> GetNearbyObjects (FlockAgent agent)
+    {
+        List<Transform> context = new List<Transform>();
+
+        Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position, neighborRadius);
+
+        foreach (var collider in contextColliders)
+        {
+            if (collider != agent.AgentCollider)
+            {
+                context.Add(collider.transform);
+            }
+        }
+
+        return context;
     }
 }

@@ -12,9 +12,13 @@ public class FlockAgent : MonoBehaviour
     {
         agentCollider = GetComponent<Collider2D>();
     }
-
+    // velocity - offset position (local)
     public void Move(Vector2 velocity)
     {
-        transform.up += (Vector3) velocity * Time.deltaTime;
+        // The sprite is pointing Upwards, this sets in angle to the position it will move in
+        transform.up = velocity;
+
+        // Delta time => time (in seconds) between frames
+        transform.position += (Vector3) velocity * Time.deltaTime;
     }
 }
