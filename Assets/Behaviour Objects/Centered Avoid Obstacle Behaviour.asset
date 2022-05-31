@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee3daab681d50549aec6aa22474d41f, type: 3}
+  m_Name: Centered Avoid Obstacle Behaviour
+  m_EditorClassIdentifier: 
+  behaviours:
+  - {fileID: 11400000, guid: b69a05a93c51f454aa6f61e9cd04a72b, type: 2}
+  - {fileID: 11400000, guid: 8deda56d12d2cfb4cb8faf0d95028cb4, type: 2}
+  - {fileID: 11400000, guid: 1adf2a06054a8de43a6fb89601b8a048, type: 2}
+  - {fileID: 11400000, guid: ebb5613bea2f1644eaabef06c02a5e6c, type: 2}
+  - {fileID: 11400000, guid: a45b3743e3524a444bb0bcaa6d06ea77, type: 2}
+  weights:
+  - 4
+  - 1
+  - 2
+  - 0.2
+  - 37.3
