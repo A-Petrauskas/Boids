@@ -4,3 +4,7 @@ Boids — A Simple Way to Simulate How Birds Flock (made with Unity)
 TOFIX: Obstacle avoidance uses the coordinates of the object, not the collider area.
 
 TOFIX: Obstacle avoidance is based on the boid (agent) avoidance radius.
+
+TODO: Add random colors.
+
+TODO: Add different variations of behaviours.
